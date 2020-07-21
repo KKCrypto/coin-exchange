@@ -49,7 +49,7 @@ class App extends React.Component {
 	}
 	
 
-/*
+	/*
 	[1, 2, 3, 4, 5].map( x => `<Coin>${x}</Coin>` )
 
 	key: uuidv4()
@@ -65,7 +65,7 @@ class App extends React.Component {
 
 	[1, 2, 3, 4, 5].find( x => x === 4 )
 	[1, 2, 3, 4, 5].find( x => x > 4 )
-*/
+	*/
 
 	handleBalanceVisibilityChange = () => {
 		this.setState( function(oldState) {
