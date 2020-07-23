@@ -15,7 +15,7 @@ const formatPrice = price => parseFloat(Number(price).toFixed(4))
 function App(props) {
     
     const [balance, setBalance] = useState(10000)
-    const [showBalance, setShowBalance] = useState(true)
+    const [showBalance, setShowBalance] = useState(false)
     const [coinData, setCoinData] = useState([])
 
 /*    
@@ -43,6 +43,7 @@ function App(props) {
                 key: coin.id,
                 name: coin.name,
                 ticker: coin.symbol,
+                percent_change: coin.quotes.USD.percent_change_15m,
                 balance: 0,
                 price: formatPrice(coin.quotes.USD.price)
             }
@@ -72,7 +73,6 @@ function App(props) {
 	const handleRefresh = async (valueChangeId) => {
         const tickerUrl = `https://api.coinpaprika.com/v1/tickers/${valueChangeId}`
         const response = await axios.get(tickerUrl)
-        debugger
         const newPrice = formatPrice(response.data.quotes.USD.price)
 		const newCoinData = coinData.map( function( values ) {
 			let newValues = { ...values }

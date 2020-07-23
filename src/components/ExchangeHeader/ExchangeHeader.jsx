@@ -8,7 +8,7 @@ const Img = styled.img`
 `
 
 const Header = styled.header`
-    background-color: #282c34;
+    background-color: #333;
     min-height: 20vh;
     display: flex;
     flex-direction: row;
